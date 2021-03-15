@@ -22,14 +22,7 @@ jobs:
       run: cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
-      
-  deploy:
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
-      - uses: actions/checkout@v2
-      - name: Publish
-        uses: cloudflare/wrangler-action@1.3.0
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          workingDirectory: 'api'
+    - uses: cloudflare/wrangler-action@1.3.0
+      with:
+        apiToken: ${{ secrets.CF_API_TOKEN }}
+        workingDirectory: 'api'
