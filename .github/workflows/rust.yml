@@ -12,12 +12,12 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./api
     steps:
     - uses: actions/checkout@v2
     - name: Build
       run: cargo build --verbose
-      working-directory: ./api
     - name: Run tests
       run: cargo test --verbose
-      working-directory: ./api
