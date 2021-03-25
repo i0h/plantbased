@@ -2,5 +2,5 @@ name = "api"
 type = "rust"
 account_id = "79902b6169c4ebc5bb13fb2571ee55d6"
 workers_dev = true
-route = "api.plantbased.wiki/*"
+route = "apis.plantbased.wiki/test/*"
 zone_id = "79902b6169c4ebc5bb13fb2571ee55d6"
