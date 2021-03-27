@@ -22,11 +22,11 @@ const StyledContentWrapper = styled(ContentWrapper)`
   && {
     width: 100%;
     height: 100%;
-    min-height: 60vh;
+    min-height: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 6rem;
+    margin-bottom: 0rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-bottom: 4rem;
     }

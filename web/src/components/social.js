@@ -28,8 +28,6 @@ const StyledSocialWrapper = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     overflow: visible;
   }
-
-  /* Workaround: https://stackoverflow.com/questions/38993170/last-margin-padding-collapsing-in-flexbox-grid-layout */
   &::after {
     content: "";
     width: 2.5rem;

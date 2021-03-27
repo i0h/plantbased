@@ -39,8 +39,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `
 
-const Privacy = ({ data }) => {
-  const { body, frontmatter } = data.privacy.edges[0].node
+const Disclaimer = ({ data }) => {
+  const { body, frontmatter } = data.disclaimer.edges[0].node
   const { title, seoTitle, useSeoTitleSuffix, useSplashScreen } = frontmatter
 
   const globalState = {
@@ -70,9 +70,9 @@ const Privacy = ({ data }) => {
   )
 }
 
-Privacy.propTypes = {
+Disclaimer.propTypes = {
   data: PropTypes.shape({
-    privacy: PropTypes.shape({
+    disclaimer: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
@@ -85,11 +85,11 @@ Privacy.propTypes = {
   }).isRequired,
 }
 
-export default Privacy
+export default Disclaimer
 
 export const pageQuery = graphql`
   {
-    privacy: allMdx(filter: { fileAbsolutePath: { regex: "/privacy/" } }) {
+    disclaimer: allMdx(filter: { fileAbsolutePath: { regex: "/disclaimer/" } }) {
       edges {
         node {
           body

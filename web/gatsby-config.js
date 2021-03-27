@@ -5,7 +5,6 @@ const {
   siteDescription,
   siteIcon,
   siteUrl,
-  googleAnalyticsTrackingId,
   colors,
 } = require(`./config`)
 
@@ -25,18 +24,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
-    {
-      resolve: `gatsby-plugin-gdpr-cookies`,
-      options: {
-        googleAnalytics: {
-          trackingId: googleAnalyticsTrackingId,
-          cookieName: "gatsby-gdpr-google-analytics",
-          anonymize: true,
-          allowAdFeatures: false,
-        },
-        environments: ["production"], // defines the environments where the tracking should be available
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

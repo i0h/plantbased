@@ -9,8 +9,6 @@ import { useDarkMode } from "../hooks"
 import GlobalStyle from "../styles/globalStyle"
 import Header from "./header"
 import Footer from "./footer"
-import CookieBar from "../components/cookieBar"
-import { useCookieBar } from "../../config"
 
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
 if (typeof window !== "undefined") {
@@ -32,13 +30,12 @@ const Layout = ({ children }) => {
   const theme = darkModeEnabled ? darkTheme : lightTheme
 
   return (
-    <StyledLayoutWrapper id="layout-wrapper" data-useCookieBar={useCookieBar}>
+    <StyledLayoutWrapper id="layout-wrapper">
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
-        {useCookieBar && <CookieBar />}
       </ThemeProvider>
     </StyledLayoutWrapper>
   )

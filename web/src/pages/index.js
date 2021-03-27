@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => {
           }
         />
         <Hero content={data.hero.edges} />
-        <About content={data.about.edges} />
+        
         <Interests content={data.interests.edges} />
       </Layout>
     </GlobalStateProvider>
@@ -105,13 +105,6 @@ export const pageQuery = graphql`
             shownItems
             interests {
               name
-              icon {
-                childImageSharp {
-                  fixed(width: 20, height: 20, quality: 90) {
-                    ...GatsbyImageSharpFixed
-                  }
-                }
-              }
             }
           }
           frontmatter {

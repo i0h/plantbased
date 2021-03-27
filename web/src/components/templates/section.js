@@ -26,8 +26,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `
 
-// Add more styled components here
-
 const ___Section___ = ({ content }) => {
   // Extract GraphQL data here
   const sectionDetails = content[0].node

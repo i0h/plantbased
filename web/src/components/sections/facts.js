@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-
+import Img from "gatsby-image"
 import { motion, useAnimation } from "framer-motion"
 
 import { detectMobileAndTablet, isSSR } from "../../utils"
@@ -40,9 +40,8 @@ const StyledContentWrapper = styled(ContentWrapper)`
   }
 `
 
-const StyledInterests = styled.div`
+const StyledFacts = styled.div`
   display: grid;
-  /* Calculate how many columns are needed, depending on interests count */
   grid-template-columns: repeat(
     ${({ itemCount }) => Math.ceil(itemCount / 2)},
     15.625rem
@@ -58,7 +57,6 @@ const StyledInterests = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-  /* Workaround: https://stackoverflow.com/questions/38993170/last-margin-padding-collapsing-in-flexbox-grid-layout */
   &::after {
     content: "";
     width: ${({ itemCount }) =>
@@ -70,7 +68,6 @@ const StyledInterests = styled.div`
     overflow: visible;
     padding: 0;
   }
-  /* Show scrollbar if desktop and wrapper width > viewport width */
   @media (hover: hover) {
     scrollbar-color: ${({ theme }) => theme.colors.scrollBar} transparent; // Firefox only
     &::-webkit-scrollbar {
@@ -94,7 +91,7 @@ const StyledInterests = styled.div`
     }
   }
 
-  .interest {
+  .facts {
     width: 15.625rem;
     height: 3rem;
     display: flex;
@@ -110,9 +107,9 @@ const StyledInterests = styled.div`
   }
 `
 
-const Interests = ({ content }) => {
+const Facts = ({ content }) => {
   const { exports, frontmatter } = content[0].node
-  const { shownItems, interests } = exports
+  const { shownItems, facts } = exports
 
   const [shownInterests, setShownInterests] = useState(shownItems)
 
@@ -123,13 +120,13 @@ const Interests = ({ content }) => {
   const bControls = useAnimation()
 
   useEffect(() => {
-    // If mobile or tablet, show all interests initially
-    // Otherwise interests.mdx will determine how many interests are shown
+    // If mobile or tablet, show all facts initially
+    // Otherwise facts.mdx will determine how many facts are shown
     // (isSSR) is used to prevent error during gatsby build
     if (!isSSR && detectMobileAndTablet(window.innerWidth)) {
-      setShownInterests(interests.length)
+      setShownInterests(facts.length)
     }
-  }, [interests])
+  }, [facts])
 
   useEffect(() => {
     const sequence = async () => {
@@ -150,11 +147,11 @@ const Interests = ({ content }) => {
   const showMoreItems = () => setShownInterests(shownInterests + 4)
 
   return (
-    <StyledSection id="interests">
+    <StyledSection id="facts">
       <StyledContentWrapper>
         <h3 className="section-title">{frontmatter.title}</h3>
-        <StyledInterests itemCount={interests.length} ref={ref}>
-          {interests.slice(0, shownInterests).map(({ name }, key) => (
+        <StyledInterests itemCount={facts.length} ref={ref}>
+          {facts.slice(0, shownInterests).map(({ name, icon }, key) => (
             <motion.div
               className="interest"
               key={key}
@@ -162,10 +159,10 @@ const Interests = ({ content }) => {
               initial={{ opacity: 0, scaleY: 0 }}
               animate={iControls}
             >
-               {name}
+              <Img className="icon" fixed={icon.childImageSharp.fixed} /> {name}
             </motion.div>
           ))}
-          {shownInterests < interests.length && (
+          {shownInterests < facts.length && (
             <motion.div initial={{ opacity: 0, scaleY: 0 }} animate={bControls}>
               <Button
                 onClick={() => showMoreItems()}
@@ -187,7 +184,7 @@ Interests.propTypes = {
     PropTypes.shape({
       node: PropTypes.shape({
         exports: PropTypes.shape({
-          interests: PropTypes.array.isRequired,
+          facts: PropTypes.array.isRequired,
           shownItems: PropTypes.number.isRequired,
         }).isRequired,
         frontmatter: PropTypes.object.isRequired,

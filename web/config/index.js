@@ -7,10 +7,8 @@ module.exports = {
     "A collection of facts about the animal agriculture industry.",
   siteUrl: "https://plantbased.wiki",
   siteLanguage: "en_GB",
-  siteIcon: "content/favicon.png", // Relative to gatsby-config file
-  seoTitleSuffix: "Plant Based Wiki", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
-  useCookieBar: false, // If you use Google Analytics and want to be GDPR-compliant, set it to true
-  googleAnalyticsTrackingId: "", // e.g. UA-XXXXXX-X
+  siteIcon: "content/favicon.ico",
+  seoTitleSuffix: "Plant Based Wiki",
 
   // -- THEME SETTINGS -----
   colors: {
@@ -42,43 +40,10 @@ module.exports = {
   fonts: {
     primary: "Roboto, Arial, sans-serif",
   },
-
-  //-- ARTICLES SECTION SETTINGS -----
-  // You can create your own Medium feed with this rss to json converter: https://rss2json.com/
-  // To access your Medium RSS feed, just replace this url with your username: https://medium.com/feed/@{yourname}
   mediumRssFeed: "",
-  // rssFeed: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Finternational%2Frss",
-
   shownArticles: 0,
+  socialMedia: [],
 
-  //-- SOCIAL MEDIA SETTINGS -----
-  // There are icons available for the following platforms:
-  // Medium, GitHub, LinkedIn, XING, Behance, E-Mail
-  socialMedia: [
-    // {
-    //   name: "Linkedin",
-    //   url: "https://www.linkedin.com/in/konstantin-muenster/",
-    // },
-    // {
-    //   name: "Medium",
-    //   url: "https://konstantinmuenster.medium.com/",
-    // },
-    // {
-    //   name: "Github",
-    //   url:
-    //     "https://github.com/konstantinmuenster/gatsby-starter-portfolio-minimal",
-    // },
-    // {
-    //   name: "Behance",
-    //   url: "https://www.behance.net/konstanmnster",
-    // },
-    // {
-    //   name: "Mail",
-    //   url: "mailto:mail@konstantin.digital",
-    // },
-  ],
-
-  //-- NAVIGATION SETTINGS -----
   navLinks: {
     menu: [
       {
@@ -103,11 +68,7 @@ module.exports = {
   footerLinks: [
     {
       name: "Disclaimer",
-      url: "/privacy",
-    },
-    {
-      name: "Imprint",
-      url: "/imprint",
+      url: "/disclaimer",
     },
   ],
 }
