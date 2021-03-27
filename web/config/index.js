@@ -7,7 +7,7 @@ module.exports = {
     "A collection of facts about the animal agriculture industry.",
   siteUrl: "https://plantbased.wiki",
   siteLanguage: "en_GB",
-  siteIcon: "content/favicon.ico",
+  siteIcon: "content/favicon.png",
   seoTitleSuffix: "Plant Based Wiki",
 
   // -- THEME SETTINGS -----
