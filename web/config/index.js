@@ -1,14 +1,14 @@
 module.exports = {
   //-- SITE SETTINGS -----
-  author: "@konstantinmuenster",
-  siteTitle: "Gatsby Starter Portfolio Minimal",
-  siteShortTitle: "Gatsby", // Used as logo text in header, footer, and splash screen
+  author: "@i0h",
+  siteTitle: "🌱 Plant Based Wiki",
+  siteShortTitle: "plantbased", // Used as logo text in header, footer, and splash screen
   siteDescription:
-    "A modern one-page portfolio with a clean yet expressive design.",
-  siteUrl: "https://gatsby-starter-portfolio-minimal.netlify.app/",
-  siteLanguage: "en_US",
+    "A collection of facts about the animal agriculture industry.",
+  siteUrl: "https://plantbased.wiki",
+  siteLanguage: "en_GB",
   siteIcon: "content/favicon.png", // Relative to gatsby-config file
-  seoTitleSuffix: "Portfolio Minimal", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
+  seoTitleSuffix: "Plant Based Wiki", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
   useCookieBar: false, // If you use Google Analytics and want to be GDPR-compliant, set it to true
   googleAnalyticsTrackingId: "", // e.g. UA-XXXXXX-X
 
@@ -46,33 +46,32 @@ module.exports = {
   //-- ARTICLES SECTION SETTINGS -----
   // You can create your own Medium feed with this rss to json converter: https://rss2json.com/
   // To access your Medium RSS feed, just replace this url with your username: https://medium.com/feed/@{yourname}
-  mediumRssFeed:
-    "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40konstantinmuenster",
+  mediumRssFeed: "",
   // rssFeed: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.theguardian.com%2Finternational%2Frss",
 
-  shownArticles: 3,
+  shownArticles: 0,
 
   //-- SOCIAL MEDIA SETTINGS -----
   // There are icons available for the following platforms:
   // Medium, GitHub, LinkedIn, XING, Behance, E-Mail
   socialMedia: [
-    {
-      name: "Linkedin",
-      url: "https://www.linkedin.com/in/konstantin-muenster/",
-    },
-    {
-      name: "Medium",
-      url: "https://konstantinmuenster.medium.com/",
-    },
-    {
-      name: "Github",
-      url:
-        "https://github.com/konstantinmuenster/gatsby-starter-portfolio-minimal",
-    },
-    {
-      name: "Behance",
-      url: "https://www.behance.net/konstanmnster",
-    },
+    // {
+    //   name: "Linkedin",
+    //   url: "https://www.linkedin.com/in/konstantin-muenster/",
+    // },
+    // {
+    //   name: "Medium",
+    //   url: "https://konstantinmuenster.medium.com/",
+    // },
+    // {
+    //   name: "Github",
+    //   url:
+    //     "https://github.com/konstantinmuenster/gatsby-starter-portfolio-minimal",
+    // },
+    // {
+    //   name: "Behance",
+    //   url: "https://www.behance.net/konstanmnster",
+    // },
     // {
     //   name: "Mail",
     //   url: "mailto:mail@konstantin.digital",
@@ -83,23 +82,22 @@ module.exports = {
   navLinks: {
     menu: [
       {
-        name: "About Me",
-        url: "/#about",
+        name: "API",
+        url: "https://api.plantbased.wiki",
       },
       {
-        name: "Features",
-        url: "/#projects",
+        name: "GitHub",
+        url: "https://github.com/i0h/plantbased",
       },
       {
-        name: "Contact",
-        url: "/#contact",
+        name: "Developer",
+        url: "https://isaac.hulse.wtf",
       },
     ],
     button: {
-      useFileName: true,
-      name: "Resume",
-      fileName: "goldenpuppy.pdf", // the file has to be placed inside the static folder at the root level
-      url: "", // if useFileName=false, you can set an anchor link here and use the button for navigational purposes
+      useFileName: false,
+      name: "Donate",
+      url: "https://patreon.com/earthlinged",
     },
   },
   footerLinks: [
