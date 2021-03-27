@@ -2,7 +2,7 @@ module.exports = {
   //-- SITE SETTINGS -----
   author: "@i0h",
   siteTitle: "🌱 Plant Based Wiki",
-  siteShortTitle: "plantbased", // Used as logo text in header, footer, and splash screen
+  siteShortTitle: "plantbased.wiki", // Used as logo text in header, footer, and splash screen
   siteDescription:
     "A collection of facts about the animal agriculture industry.",
   siteUrl: "https://plantbased.wiki",
@@ -96,13 +96,13 @@ module.exports = {
     ],
     button: {
       useFileName: false,
-      name: "Donate",
+      name: "Support",
       url: "https://patreon.com/earthlinged",
     },
   },
   footerLinks: [
     {
-      name: "Privacy",
+      name: "Disclaimer",
       url: "/privacy",
     },
     {
