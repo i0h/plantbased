@@ -139,7 +139,7 @@ const Interests = ({ content }) => {
         await iControls.start(i => ({
           opacity: 1,
           scaleY: 1,
-          transition: { delay: i * 0.1 },
+          transition: { delay: i * 0.05 },
         }))
         await bControls.start({ opacity: 1, scaleY: 1 })
       }
@@ -162,7 +162,7 @@ const Interests = ({ content }) => {
               initial={{ opacity: 0, scaleY: 0 }}
               animate={iControls}
             >
-               {name}
+              {name}
             </motion.div>
           ))}
           {shownInterests < interests.length && (
