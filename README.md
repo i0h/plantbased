@@ -1,1 +1,1 @@
-![plantbased.wiki]('./assets/bg.jpeg')
+![plantbased.wiki](assets/bg.jpeg)
