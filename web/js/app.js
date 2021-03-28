@@ -1,10 +1,16 @@
 (function () {
 
-    const quotesEl = document.querySelector('.quotes');
+    const quotesEl = document.querySelector('.quotesElement');
     const loaderEl = document.querySelector('.loader');
 
     // get the quotes from API
     const getQuotes = async (page, limit) => {
+        // var myHeaders = new Headers();
+        // var requestOptions = {
+        //   method: 'GET',
+        //   headers: myHeaders,
+        //   redirect: 'follow'
+        // };
         const API_URL = `https://api.plantbased.wiki/v1/facts/?page=${page}&limit=${limit}`;
         const response = await fetch(API_URL);
         // handle 404
@@ -17,13 +23,24 @@
     // show the quotes
     const showQuotes = (quotes) => {
         quotes.forEach(quote => {
-            const quoteEl = document.createElement('blockquote');
-            quoteEl.classList.add('quote');
+            const quoteEl = document.createElement('div');
+            // quoteEl.classList.add('class');
 
             quoteEl.innerHTML = `
-            <span>${quote.id})</span>
-            ${quote.content}
-            <footer>${quote.sourceAuthor}</footer>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card p-3">
+                    <figure class="p-3 mb-0">
+                        <blockquote class="blockquote">
+                            <p>${quote.content}</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0 text-muted">
+                        <a href="${quote.sourceURL}" target="_blank">${quote.sourceTitle}</a>, <i>${quote.sourceAuthor}</i>
+
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
         `;
 
             quotesEl.appendChild(quoteEl);
@@ -59,7 +76,7 @@
                     // show quotes
                     showQuotes(response);
                     // update the total
-                    total = response.total;
+                    total = 100;
                 }
             } catch (error) {
                 console.log(error.message);
