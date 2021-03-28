@@ -14,7 +14,7 @@ function getURLParameter(sUrl, sParam) {
 }
 
 /**
- * Respond to the request
+ * Respond to request
  * @param {Request} request
  */
 async function handleRequest(request) {
