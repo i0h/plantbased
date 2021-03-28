@@ -5,6 +5,12 @@
 
     // get the quotes from API
     const getQuotes = async (page, limit) => {
+        // var myHeaders = new Headers();
+        // var requestOptions = {
+        //   method: 'GET',
+        //   headers: myHeaders,
+        //   redirect: 'follow'
+        // };
         const API_URL = `https://api.plantbased.wiki/v1/facts/?page=${page}&limit=${limit}`;
         const response = await fetch(API_URL);
         // handle 404
@@ -17,12 +23,15 @@
     // show the quotes
     const showQuotes = (quotes) => {
         quotes.forEach(quote => {
-
             const quoteEl = document.createElement('div');
             quoteEl.classList.add('col-sm-6', 'col-lg-4', 'mb-4');
+            // quoteEl.style.position = 'absolute';
+            // quoteEl.style.left = '50%';
+            // quoteEl.style.top = '0px';
 
+
+            // quoteEl.styleList.add('style="position: absolute; left: 50%; top: 0px;"')
             quoteEl.innerHTML = `
-            <!-- <div class="col-sm-6 col-lg-4 mb-4"> -->
                 <div class="card p-3">
                     <figure class="p-3 mb-0">
                         <blockquote class="blockquote">
@@ -34,8 +43,6 @@
                         </figcaption>
                     </figure>
                 </div>
-            <!-- </div> -->
-
         `;
 
             quotesEl.appendChild(quoteEl);
@@ -72,7 +79,6 @@
                     showQuotes(response);
                     // update the total
                     total = 100;
-
                 }
             } catch (error) {
                 console.log(error.message);
