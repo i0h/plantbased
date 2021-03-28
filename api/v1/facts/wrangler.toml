@@ -1,0 +1,10 @@
+name = "facts"
+type = "javascript"
+account_id = "79902b6169c4ebc5bb13fb2571ee55d6"
+workers_dev = true
+kv_namespaces = [
+  { binding = "NAMESPACE", id = "dc4bd903e3e6444db368276be5bf3942", preview_id = "c77605aa4840402dbc0f707f970fa9c4" }
+]
+[env.production]
+route = "api.plantbased.wiki/v1/facts/*"
+zone_id = "e321a090399368eb9e715d09b9ffce00"
