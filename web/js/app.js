@@ -1,6 +1,6 @@
 (function () {
 
-    const quotesEl = document.querySelector('.quotesElement');
+    const quotesEl = document.querySelector('.row');
     const loaderEl = document.querySelector('.loader');
 
     // get the quotes from API
@@ -24,10 +24,10 @@
     const showQuotes = (quotes) => {
         quotes.forEach(quote => {
             const quoteEl = document.createElement('div');
-            // quoteEl.classList.add('class');
+            quoteEl.classList.add('col-sm-6', 'col-lg-4', 'mb-4');
 
             quoteEl.innerHTML = `
-            <div class="col-sm-6 col-lg-4 mb-4">
+            <!-- <div class="col-sm-6 col-lg-4 mb-4"> -->
                 <div class="card p-3">
                     <figure class="p-3 mb-0">
                         <blockquote class="blockquote">
@@ -39,7 +39,7 @@
                         </figcaption>
                     </figure>
                 </div>
-            </div>
+            <!-- </div> -->
 
         `;
 
